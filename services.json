@@ -1,0 +1,50 @@
+[
+    {
+        "index": 0,
+        "picture": "https://static.wixstatic.com/media/1573a4_06eaab36dca9455d822dfd9985fbdc86.jpg/v1/fill/w_370,h_246,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/1573a4_06eaab36dca9455d822dfd9985fbdc86.jpg",
+        "price": 194,
+        "rating": 4,
+        "name": "PHOTOGRAPHIC PRODUCTION & SCIENTIFIC DISSEMINATION",
+        "about": "My specialty is the photographic and audiovisual record of fauna and flora, capturing the essence of each region, exploring beautiful landscapes, exotic birds and even the most frightened nocturnal animals such as wild cats and their prey. I use creative techniques from tracking techniques of former hunters to new digital technologies like heat detection.If you want to know more about my work or are in interested in developing a photographic project for a specific conservation area, let me know..\r\n"
+    },
+    {
+        "index": 1,
+        "picture": "https://static.wixstatic.com/media/1573a4_095c3b2b8dca490da3d00e4e1336adcf.jpg/v1/fill/w_370,h_246,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/1573a4_095c3b2b8dca490da3d00e4e1336adcf.jpg",
+        "price": 98,
+        "rating": 3,
+        "name": "PHOTOGRAPHIC BOOKS",
+        "about": "I implement high quality editorial projects of artistic, educational and scientific value. We do not all speak the same language, but we understand images. I believe that photographic books with well-planned visual storytelling can inspire positive change. With five published books I do have the necessary knowledge and expertise to carry out independent editorial projects.If you want to know more or are interested in developing an editorial project with focus on nature or culture, get in touch\r\n"
+    },
+    {
+        "index": 2,
+        "picture": "https://static.wixstatic.com/media/1573a4_de81a0a370e84aa69c2e076d413d7fb1.jpg/v1/fill/w_369,h_246,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/1573a4_de81a0a370e84aa69c2e076d413d7fb1.jpg",
+        "price": 79,
+        "rating": 3,
+        "name": "SPEECHES",
+        "about": "I offer a variety of speeches for different audiences, from educational presentations for children to complete lectures for companies. Please, find some examples Speech: Conservation Photography.What is Conservation Photography? Presentation about the responsibility of photographers and the power of pictures.Speech:Wildlife Photography - Basic Equipment and Techniques  An introduction into the world of nature photography.If you want to learn more or are interested in one of my speeches, send me a message\r\n"
+    },
+    {
+        "index": 3,
+        "picture": "https://static.wixstatic.com/media/1573a4_fb7b8679005c403b9cafb5fd4a5f9129.jpg/v1/fill/w_370,h_246,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/1573a4_fb7b8679005c403b9cafb5fd4a5f9129.jpg",
+        "price": 180,
+        "rating": 2,
+        "name": "WORKSHOPS",
+        "about": "In my workshops about Wildlife Photography I teach basic and advanced photography techniques to photograph wildlife. Please, find some examples below Workshop: Wildlife Photography - Basics Introduction to Nature Photography. Content: Learn how to use your camera in manual mode and know the differences between aperture, shutter speed and ISO. How should you plan your field work experience to photograph wild animals and which is the best approach to wildlife storytelling Workshop: Wildlife Photography - Advanced Content: Tracking techniques using camera traps and playback. The objective of this workshop is to understand the natural behaviour of wildlife to photograph animals in their in the natural environment without stressing them\r\n"
+    },
+    {
+        "index": 4,
+        "picture": "https://static.wixstatic.com/media/1573a4_ca178d2aa3a2482b9fba546e1cc97b19.jpg/v1/fill/w_369,h_246,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/1573a4_ca178d2aa3a2482b9fba546e1cc97b19.jpg",
+        "price": 189,
+        "rating": 3,
+        "name": "EXHIBITIONS",
+        "about": "I implement photographic exhibitions that show the exuberant beauty of nature and culture to a broad audience. For those exhibitions I either choose from my photo database with more than 30,000 images (constantly growing) or develop an exclusive project for a specific region or theme, which can be transformed into exhibits or can be used for further marketing purposes.Are you interested in a thematic exhibition for your company? My exhibitions have educational value. I count on a team of experts and actors who turn the show into an unforgettable experience. Contact me for design and budget.\r\n"
+    },
+    {
+        "index": 5,
+        "picture": "https://static.wixstatic.com/media/1573a4_b387541258be40838dfde501821bdfab.jpg/v1/fill/w_369,h_246,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/1573a4_b387541258be40838dfde501821bdfab.jpg",
+        "price": 115,
+        "rating": 4,
+        "name": "AUDIOVISUAL PRODUCTION",
+        "about": "My documentaries, web series and clips show our natural resources as well as our environmental and cultural reality of our society. I use videos as a tool for the art of visual storytelling, adopting a different language than in my photography. The medium video appeals to human emotions. I count on a diverse team of filmmakers, scientists and artists to implement complex audiovisual projectsIf you want to know more or are considering developing an audiovisual project, documentary, web-series or clip, let me know.\r\n"
+    }
+]
