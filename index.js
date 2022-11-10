@@ -49,6 +49,15 @@ async function run() {
             res.send(result);
         })
 
+        app.get('/review/:id', async (req, res) => {
+            const id = req.params.id;
+            console.log(id);
+            const query = { _id: ObjectId(id) };
+            const result = await reviewsCollection.findOne(query);
+            res.send(result);
+        })
+
+
         //for my review 
 
         app.get('/reviews/:email', async (req, res) => {
@@ -79,14 +88,29 @@ async function run() {
 
         })
 
+
+
         // delete review 
 
-        app.delete('/review/:id', async (req, res) => {
+        app.delete('/reviews/:id', async (req, res) => {
             const id = req.params.id;
             const query = { _id: ObjectId(id) }
             const result = await reviewsCollection.deleteOne(query);
             res.send(result);
         })
+
+        // update 
+
+        app.put('/reviews/:id', async (req, res) => {
+            const id = req.params.id;
+            const update = req.body;
+            console.log(id);
+            console.log(update);
+            res.send('hit ')
+        })
+
+
+
 
 
 
