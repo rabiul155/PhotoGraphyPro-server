@@ -48,14 +48,18 @@ async function run() {
             const result = await servicesCollection.insertOne(service);
             res.send(result);
         })
-        app.get('/reviews/:id', async (req, res) => {
-            const email = req.params.id;
+
+        //for my review 
+
+        app.get('/reviews/:email', async (req, res) => {
+            const email = req.params.email;
             const query = { email: email };
             const cursor = reviewsCollection.find(query);
             const review = await cursor.toArray();
             res.send(review);
         })
 
+        // for add review 
         app.post('/reviews', async (req, res) => {
             const review = req.body;
             console.log(review);
@@ -64,14 +68,24 @@ async function run() {
         })
 
 
+        // for get review by id 
 
-        app.get('/reviews/:id', async (req, res) => {
+        app.get('/reviews', async (req, res) => {
+            console.log(req.query.review_id);
+            const query = { review_id: req.query.review_id };
+            const cursor = reviewsCollection.find(query);
+            const review = await cursor.toArray();
+            res.send(review);
+
+        })
+
+        // delete review 
+
+        app.delete('/review/:id', async (req, res) => {
             const id = req.params.id;
-            const query = { review_id: id };
-            const cursor = reviewsCollection.find(query)
-            const reviews = await cursor.toArray();
-            res.send(reviews);
-
+            const query = { _id: ObjectId(id) }
+            const result = await reviewsCollection.deleteOne(query);
+            res.send(result);
         })
 
 
