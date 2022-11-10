@@ -48,6 +48,13 @@ async function run() {
             const result = await servicesCollection.insertOne(service);
             res.send(result);
         })
+        app.get('/reviews/:id', async (req, res) => {
+            const email = req.params.id;
+            const query = { email: email };
+            const cursor = reviewsCollection.find(query);
+            const review = await cursor.toArray();
+            res.send(review);
+        })
 
         app.post('/reviews', async (req, res) => {
             const review = req.body;
