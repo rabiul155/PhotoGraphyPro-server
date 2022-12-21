@@ -69,6 +69,7 @@ async function run() {
         })
 
         // for add review 
+
         app.post('/reviews', async (req, res) => {
             const review = req.body;
             console.log(review);
@@ -103,10 +104,18 @@ async function run() {
 
         app.put('/reviews/:id', async (req, res) => {
             const id = req.params.id;
-            const update = req.body;
-            console.log(id);
-            console.log(update);
-            res.send('hit ')
+            console.log(req.body.reviewUpdate)
+            const message = req.body.reviewUpdate
+            const filter = { _id: ObjectId(id) }
+            const options = { upsert: true };
+            const updatedDoc = {
+                $set: {
+                    review: message
+                }
+            }
+            const result = await reviewsCollection.updateOne(filter, updatedDoc, options)
+
+            res.send(result)
         })
 
 
