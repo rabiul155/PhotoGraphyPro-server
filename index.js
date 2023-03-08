@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
+const { query } = require('express');
 require('dotenv').config();
 
 const port = process.env.PORT || 5000;
@@ -21,6 +22,8 @@ async function run() {
     try {
         const servicesCollection = client.db('Photografer').collection('services')
         const reviewsCollection = client.db('Photografer').collection('reviews')
+        const bookingCollection = client.db('Photografer').collection('booking')
+
         app.get('/home-services', async (req, res) => {
             const query = {};
             const cursor = servicesCollection.find(query)
@@ -115,6 +118,26 @@ async function run() {
             }
             const result = await reviewsCollection.updateOne(filter, updatedDoc, options)
 
+            res.send(result)
+        })
+
+        app.post('/booking', async (req, res) => {
+            const booking = req.body;
+            const result = await bookingCollection.insertOne(booking);
+            res.send(result);
+        })
+
+        app.get('/myBooking', async (req, res) => {
+            const email = req.query.email;
+            console.log(email);
+            const query = { consumerEmail: email }
+            const result = await bookingCollection.find(query).toArray()
+            res.send(result);
+        })
+
+        app.get('/customerOrder', async (req, res) => {
+            const query = {}
+            const result = await bookingCollection.find(query).toArray()
             res.send(result)
         })
 
