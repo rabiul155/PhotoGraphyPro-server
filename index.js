@@ -47,14 +47,21 @@ async function run() {
 
         app.post('/services', async (req, res) => {
             const service = req.body;
-            console.log(service)
+
             const result = await servicesCollection.insertOne(service);
+            res.send(result);
+        })
+
+        app.delete('/deleteService/:id', async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: ObjectId(id) }
+            const result = await servicesCollection.deleteOne(query)
             res.send(result);
         })
 
         app.get('/review/:id', async (req, res) => {
             const id = req.params.id;
-            console.log(id);
+
             const query = { _id: ObjectId(id) };
             const result = await reviewsCollection.findOne(query);
             res.send(result);
@@ -75,7 +82,7 @@ async function run() {
 
         app.post('/reviews', async (req, res) => {
             const review = req.body;
-            console.log(review);
+
             const result = await reviewsCollection.insertOne(review);
             res.send(result);
         })
@@ -84,7 +91,7 @@ async function run() {
         // for get review by id 
 
         app.get('/reviews', async (req, res) => {
-            console.log(req.query.review_id);
+
             const query = { review_id: req.query.review_id };
             const cursor = reviewsCollection.find(query);
             const review = await cursor.toArray();
@@ -107,7 +114,7 @@ async function run() {
 
         app.put('/reviews/:id', async (req, res) => {
             const id = req.params.id;
-            console.log(req.body.reviewUpdate)
+
             const message = req.body.reviewUpdate
             const filter = { _id: ObjectId(id) }
             const options = { upsert: true };
@@ -123,15 +130,37 @@ async function run() {
 
         app.post('/booking', async (req, res) => {
             const booking = req.body;
-            const result = await bookingCollection.insertOne(booking);
-            res.send(result);
+            const date = booking.bookingDate;
+            const email = booking.consumerEmail;
+            console.log(date, email);
+            const query = {};
+            const serviceBooking = await bookingCollection.find(query).toArray();
+            const booked = serviceBooking.find(service => service.bookingDate === date)
+            if (booked) {
+                res.send({ message: 'Photographer booked on this day' })
+            }
+            else {
+                const result = await bookingCollection.insertOne(booking);
+                res.send(result);
+            }
+
+
         })
 
         app.get('/myBooking', async (req, res) => {
             const email = req.query.email;
-            console.log(email);
+
             const query = { consumerEmail: email }
             const result = await bookingCollection.find(query).toArray()
+            res.send(result);
+        })
+
+        app.delete('/deleteBooking/:id', async (req, res) => {
+            const id = req.params.id;
+            const date = req.query.date;
+
+            const query = { _id: ObjectId(id), bookingDate: date }
+            const result = await bookingCollection.deleteOne(query);
             res.send(result);
         })
 
